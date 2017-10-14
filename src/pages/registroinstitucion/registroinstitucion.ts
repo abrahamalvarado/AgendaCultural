@@ -25,6 +25,8 @@ export class RegistroinstitucionPage {
   Numero='';
   Colonia='';
   Calle='';
+  Email='';
+  Password='';
   constructor(public navCtrl: NavController, public navParams: NavParams,public firebaseProvider: FirebaseProvider,public AlertCtrl:AlertController) {
   }
   showAlert() {
@@ -36,9 +38,9 @@ export class RegistroinstitucionPage {
     alert.present();
   }
   Registrar() {
-    this.firebaseProvider.Registrar(this.Nombre,this.CP,this.Numero,this.Colonia,this.Calle);
+    this.firebaseProvider.Registrar(this.Nombre,this.CP,this.Numero,this.Colonia,this.Calle,this.Email,this.Password);
     this.showAlert();
-    this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(HomePage);
     
   }
   
