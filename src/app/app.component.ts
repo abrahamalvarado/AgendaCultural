@@ -8,6 +8,7 @@ import { EventosPage } from '../pages/eventos/eventos';
 import { LoginPage } from '../pages/login/login';
 import { RegistroinstitucionPage } from '../pages/registroinstitucion/registroinstitucion';
 import { SlidesPage} from '../pages/slides/slides';
+import { PublicareventoPage } from '../pages/publicarevento/publicarevento';
 @Component({
   templateUrl: 'app.html'
 })
@@ -28,6 +29,7 @@ export class MyApp {
       { title: 'Eventos', component: EventosPage },
       { title: 'Iniciar Sesión', component: LoginPage },
       { title: 'Registrarse', component: RegistroinstitucionPage },
+      { title: 'Publicar Evento', component: PublicareventoPage },
       { title: 'Slides', component: SlidesPage }
 
     ];

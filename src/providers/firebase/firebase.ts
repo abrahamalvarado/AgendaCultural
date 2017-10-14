@@ -31,7 +31,21 @@ export class FirebaseProvider {
 
     });
   }
- 
+
+  Publicar(lugar,categoria,cp,numero,colonia,calle,entrada,precio,descripcion) {
+    this.afd.list('/Eventos/').push({
+      lugar: lugar,
+      categoria: categoria,
+      cp: cp,
+      numero:numero,
+      colonia:colonia,
+      calle:calle,
+      entrada: entrada,
+      precio: precio,
+      descripcion: descripcion
+    });
+  } 
+
   removeItem(id) {
     this.afd.list('/Institutos/').remove(id);
   }

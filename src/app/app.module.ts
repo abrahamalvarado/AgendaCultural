@@ -9,6 +9,7 @@ import { EventosPage } from '../pages/eventos/eventos';
 import { LoginPage } from '../pages/login/login';
 import { RegistroinstitucionPage } from '../pages/registroinstitucion/registroinstitucion';
 import { SlidesPage} from '../pages/slides/slides';
+import { PublicareventoPage } from '../pages/publicarevento/publicarevento'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -34,6 +35,7 @@ const config = {
     EventosPage,
     LoginPage,
     RegistroinstitucionPage,
+    PublicareventoPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ const config = {
     SlidesPage,
     EventosPage,
     LoginPage,
-    RegistroinstitucionPage
+    RegistroinstitucionPage,
+    PublicareventoPage
   ],
   providers: [
     StatusBar,
