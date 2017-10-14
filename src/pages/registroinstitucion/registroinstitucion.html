@@ -22,32 +22,32 @@
     Nombre de Institución
     </ion-list-header>
   <ion-item>
-    <ion-input type="text" placeholder="Nombre"></ion-input>
+    <ion-input type="text" placeholder="Nombre" [(ngModel)]="Nombre"></ion-input>
   </ion-item>
   <ion-list-header>
     Domicilio
   </ion-list-header>
   <ion-item>
     <ion-label stacked>Código Postal</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input type="number" [(ngModel)]="CP"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label stacked>Colonia</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="Colonia"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label stacked>Calle</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="Calle"></ion-input>
   </ion-item>
   <ion-item>
       <ion-label stacked>Número</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="Numero"></ion-input>
     </ion-item>
 
 </ion-list>
 
 <div padding>
-  <button ion-button block>Registrar</button>
+  <button ion-button block  (click)="Registrar()">Registrar</button>
   <button ion-button block color="secondary">Cancelar</button>
 </div>
 </ion-content>

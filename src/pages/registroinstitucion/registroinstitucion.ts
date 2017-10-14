@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Component,ViewChild } from '@angular/core';
+import { IonicPage,Nav, NavController, NavParams,AlertController } from 'ionic-angular';
+import { FirebaseListObservable } from 'angularfire2/database';
+import { FirebaseProvider } from './../../providers/firebase/firebase';
+import { MyApp } from '../../app/app.component';
+import { EventosPage } from '../../pages/eventos/eventos';
+import { HomePage } from '../../pages/home/home';
 /**
  * Generated class for the RegistroinstitucionPage page.
  *
@@ -14,9 +18,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'registroinstitucion.html',
 })
 export class RegistroinstitucionPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  Institutos: FirebaseListObservable<any[]>;
+  @ViewChild(Nav) nav: Nav;
+  Nombre='';
+  CP='';
+  Numero='';
+  Colonia='';
+  Calle='';
+  constructor(public navCtrl: NavController, public navParams: NavParams,public firebaseProvider: FirebaseProvider,public AlertCtrl:AlertController) {
   }
+  showAlert() {
+    let alert = this.AlertCtrl.create({
+      
+      subTitle: 'El registro de la institucion fue correcto!',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+  Registrar() {
+    this.firebaseProvider.Registrar(this.Nombre,this.CP,this.Numero,this.Colonia,this.Calle);
+    this.showAlert();
+    this.navCtrl.push(HomePage);
+    
+  }
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegistroinstitucionPage');

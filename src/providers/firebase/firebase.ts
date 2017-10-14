@@ -19,8 +19,15 @@ export class FirebaseProvider {
     return this.afd.list('/Institutos/');
   }
  
-  addItem(name) {
-    this.afd.list('/Institutos/').push(name);
+  Registrar(name,cp,numero,colonia,calle) {
+    this.afd.list('/Institutos/').push({
+      nombre: name,
+      cp: cp,
+      numero:numero,
+      colonia:colonia,
+      calle:calle
+
+    });
   }
  
   removeItem(id) {

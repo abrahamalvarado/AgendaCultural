@@ -13,9 +13,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, public firebaseProvider: FirebaseProvider) {
     this.Institutos = this.firebaseProvider.getInstitutosItems();
   }
-  addItem() {
-    this.firebaseProvider.addItem(this.newItem);
-  }
+ 
  
   removeItem(id) {
     this.firebaseProvider.removeItem(id);
