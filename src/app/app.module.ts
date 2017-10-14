@@ -12,6 +12,18 @@ import { SlidesPage} from '../pages/slides/slides';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FirebaseProvider } from '../providers/firebase/firebase';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+
+const config = {
+  apiKey: "AIzaSyCHLw8gqYFOOBeGeUcmFz-d-vEakx5XNCE",
+  authDomain: "agendacultural-420.firebaseapp.com",
+  databaseURL: "https://agendacultural-420.firebaseio.com",
+  projectId: "agendacultural-420",
+  storageBucket: "",
+  messagingSenderId: "289225152962"
+};
 
 @NgModule({
   declarations: [
@@ -21,11 +33,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SlidesPage,
     EventosPage,
     LoginPage,
-    RegistroinstitucionPage
+    RegistroinstitucionPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,7 +54,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FirebaseProvider
   ]
 })
 export class AppModule {}
