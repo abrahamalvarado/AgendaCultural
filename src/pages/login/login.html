@@ -17,21 +17,23 @@
 
 
 <ion-content padding>
+    <h1 *ngIf="authService.user | async">Bienvenido {{ (authService.user | async)?.email }}!</h1>
+  <div *ngIf="!(authService.user | async)">
   <ion-list>
-
   <ion-item>
-    <ion-label stacked>Usuario</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-label stacked>Correo Electrónico</ion-label>
+    <ion-input type="email" [(ngModel)]="email" ></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label stacked>Contraseña</ion-label>
-    <ion-input type="password"></ion-input>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
   <hr>
   <div padding>
-    <button ion-button full>Iniciar Sesión</button>
+    <button ion-button full (click)="login()" [disabled]="!email || !password">Iniciar Sesión</button>
   </div>
   
 </ion-list>
+</div>
 </ion-content>

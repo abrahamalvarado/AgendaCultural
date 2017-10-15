@@ -9,6 +9,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegistroinstitucionPage } from '../pages/registroinstitucion/registroinstitucion';
 import { SlidesPage} from '../pages/slides/slides';
 import { PublicareventoPage } from '../pages/publicarevento/publicarevento';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -18,6 +19,7 @@ export class MyApp {
   rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
+
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,) {
     this.initializeApp();

@@ -19,13 +19,14 @@ export class FirebaseProvider {
     return this.afd.list('/Institutos/');
   }
  
-  Registrar(name,cp,numero,colonia,calle,email,password) {
+  Registrar(name,cp,numero,colonia,calle,web,email,password) {
     this.afd.list('/Institutos/').push({
       nombre: name,
       cp: cp,
       numero:numero,
       colonia:colonia,
       calle:calle,
+      web: web,
       email:email,
       password:password
 
