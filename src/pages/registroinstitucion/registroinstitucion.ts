@@ -5,6 +5,7 @@ import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { MyApp } from '../../app/app.component';
 import { EventosPage } from '../../pages/eventos/eventos';
 import { HomePage } from '../../pages/home/home';
+import { AuthService } from '../../auth/auth.service';
 /**
  * Generated class for the RegistroinstitucionPage page.
  *
@@ -28,7 +29,7 @@ export class RegistroinstitucionPage {
   Web = '';
   Email='';
   Password='';
-  constructor(public navCtrl: NavController, public navParams: NavParams,public firebaseProvider: FirebaseProvider,public AlertCtrl:AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public firebaseProvider: FirebaseProvider,public AlertCtrl:AlertController, public authService: AuthService) {
   }
   showAlert() {
     let alert = this.AlertCtrl.create({
@@ -39,13 +40,14 @@ export class RegistroinstitucionPage {
     alert.present();
   }
   Registrar() {
-    this.firebaseProvider.Registrar(this.Nombre,this.CP,this.Numero,this.Colonia,this.Calle,this.Web,this.Email,this.Password);
+    this.firebaseProvider.Registrar(this.Nombre,this.CP,this.Numero,this.Colonia,this.Calle,this.Web);
+    this.authService.signup(this.Email, this.Password);
+    this.Email = this.Password = '';
     this.showAlert();
     this.navCtrl.setRoot(HomePage);
     
   }
   
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegistroinstitucionPage');
   }

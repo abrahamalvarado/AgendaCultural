@@ -38,8 +38,4 @@ export class LoginPage {
     this.authService.logout();
   }
 
-  openPage() {
-    this.navCtrl.setRoot(LoginPage);
-  }
-
 }
