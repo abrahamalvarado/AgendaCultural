@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthService } from '../../auth/auth.service';
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -19,11 +20,10 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthService) {
   }
-
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-
   signup() {
     this.authService.signup(this.email, this.password);
     this.email = this.password = '';
@@ -36,6 +36,10 @@ export class LoginPage {
 
   logout() {
     this.authService.logout();
+  }
+
+  openPage() {
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }

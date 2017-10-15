@@ -6,6 +6,18 @@
       <ion-title>
         Agenda Cultural
       </ion-title>
+      <ion-buttons end *ngIf="!(authService.user | async)">
+        <button ion-button (click)="openPage(HomePage)" >
+          <ion-icon ios="ios-log-in" md="md-log-in"></ion-icon>
+          Iniciar Sesión
+        </button>
+      </ion-buttons>
+      <ion-buttons end *ngIf="authService.user | async">
+        <button ion-button (click)="logout()" >
+          <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
+          Salir
+        </button>
+      </ion-buttons>
     </ion-navbar>
   </ion-header>
    

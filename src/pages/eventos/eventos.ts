@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AuthService } from '../../auth/auth.service';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the EventosPage page.
@@ -15,11 +17,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EventosPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public authService: AuthService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventosPage');
+  }
+  openPage(){
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }

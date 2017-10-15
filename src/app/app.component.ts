@@ -29,7 +29,6 @@ export class MyApp {
     this.pages = [
       { title: 'Inicio', component: HomePage },
       { title: 'Eventos', component: EventosPage },
-      { title: 'Iniciar Sesión', component: LoginPage },
       { title: 'Registrarse', component: RegistroinstitucionPage },
       { title: 'Publicar Evento', component: PublicareventoPage },
       { title: 'Slides', component: SlidesPage }
